@@ -1,0 +1,32 @@
+cd C:\Users\arman\OneDrive\Desktop\Costea-Proiect\MainApp
+./mvnw clean package
+consola 1:
+cd C:\Users\arman\OneDrive\Desktop\Costea-Proiect\MainApp
+java -cp target/classes com.example.news.node.node.NodeMain --id=1 --port=5000
+consola 2:
+cd C:\Users\arman\OneDrive\Desktop\Costea-Proiect\MainApp
+java -cp target/classes com.example.news.node.node.NodeMain --id=2 --port=5001
+consola 3:
+
+cd C:\Users\arman\OneDrive\Desktop\Costea-Proiect\MainApp
+java -cp target/classes com.example.news.node.node.NodeMain --id=3 --port=5002
+consola 4:
+
+cd C:\Users\arman\OneDrive\Desktop\Costea-Proiect\MainApp
+
+
+Conectare client la nod 1:
+java -cp target/classes com.example.news.node.client.ClientMain localhost 5000
+
+Conectare la client nod 2:
+java -cp target/classes com.example.news.node.client.ClientMain localhost 5001
+conectare client la node 3:
+java -cp target/classes com.example.news.node.client.ClientMain localhost 5002
+
+subscribe:
+subscribe AI
+
+publish:
+publish <topic>|<title>|<content>
+
+publish AI|BreakingNews|ChatGPT revolutionizes AI
