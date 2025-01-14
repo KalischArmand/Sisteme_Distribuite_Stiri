@@ -1,0 +1,8 @@
+com\example\news\node\bully\BullyAlgorithm.class
+com\example\news\node\heartbeat\HeartBeat.class
+com\example\news\node\client\ClientMain.class
+com\example\news\node\bully\NodeProcess.class
+com\example\news\node\client\ClientNotificationServer.class
+com\example\news\node\common\News.class
+com\example\news\node\MainAppApplication.class
+com\example\news\node\node\NodeMain.class

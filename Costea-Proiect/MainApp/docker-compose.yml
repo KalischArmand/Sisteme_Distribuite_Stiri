@@ -1,0 +1,54 @@
+version: '3'
+services:
+  node1:
+    build:
+      context: .
+      dockerfile: ./src/main/java/com/example/news/node/Dockerfile
+    container_name: node1
+    ports:
+      - "5001:5000"   # expunem container port 5000 pe host 5001
+    environment:
+      - ARGS=--id=1
+    command: ["java", "-jar", "node.jar", "--id=1", "--port=5000"]
+    networks:
+      - my-network
+
+  node2:
+    build:
+      context: .
+      dockerfile: ./src/main/java/com/example/news/node/Dockerfile
+    container_name: node2
+    ports:
+      - "5002:5000"
+    environment:
+      - ARGS=--id=2
+    command: ["java", "-jar", "node.jar", "--id=2", "--port=5000"]
+    networks:
+      - my-network
+
+  node3:
+    build:
+      context: .
+      dockerfile: ./src/main/java/com/example/news/node/Dockerfile
+    container_name: node3
+    ports:
+      - "5003:5000"
+    environment:
+      - ARGS=--id=3
+    command: ["java", "-jar", "node.jar", "--id=3", "--port=5000"]
+    networks:
+      - my-network
+
+  client:
+    build:
+      context: .
+      dockerfile: ./src/main/java/com/example/news/client/Dockerfile
+    container_name: news_client
+    networks:
+      - my-network
+    # nu expunem port, doar pornim clientul pe consolă
+    # command: ???
+
+networks:
+  my-network:
+    driver: bridge
